@@ -25,7 +25,7 @@ This project implements the full rigid-body dynamics of a quadrotor along with a
 The overall simulation is organized into modular subsystems consisting of the position controller, attitude controller, translational dynamics, and rotational dynamics.
 
 <p align="center">
-<img src="assets/simulink_model.png" width="900">
+<img src="simulink_model.png" width="900">
 </p>
 
 ---
@@ -62,7 +62,7 @@ The controller was evaluated on a continuously varying three-dimensional traject
 ## Position Tracking
 
 <p align="center">
-<img src="assets/position_tracking.png" width="900">
+<img src="position_tracking.png" width="900">
 </p>
 
 The quadrotor accurately tracks the desired X, Y and altitude trajectories with minimal steady-state error.
@@ -72,7 +72,7 @@ The quadrotor accurately tracks the desired X, Y and altitude trajectories with 
 ## Attitude Tracking
 
 <p align="center">
-<img src="assets/attitude_tracking.png" width="900">
+<img src="attitude_tracking.png" width="900">
 </p>
 
 The roll, pitch and yaw controllers maintain accurate attitude tracking throughout the flight while remaining stable during dynamic maneuvers.
@@ -82,7 +82,7 @@ The roll, pitch and yaw controllers maintain accurate attitude tracking througho
 ## 3D Flight Trajectory
 
 <p align="center">
-<img src="assets/trajectory.png" width="700">
+<img src="trajectory.png" width="700">
 </p>
 
 The measured trajectory closely follows the commanded reference throughout the simulation.
