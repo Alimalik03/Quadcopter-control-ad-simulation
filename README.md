@@ -25,7 +25,7 @@ This project implements the full rigid-body dynamics of a quadrotor along with a
 The overall simulation is organized into modular subsystems consisting of the position controller, attitude controller, translational dynamics, and rotational dynamics.
 
 <p align="center">
-<img src="simulink_model.png" width="900">
+<img src="Simulink_model1.png" width="900">
 </p>
 
 ---
