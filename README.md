@@ -2,7 +2,7 @@
 
 A full 6 degrees-of-freedom (6-DOF) nonlinear quadrotor simulation built in Simulink, with a cascaded position + attitude control architecture.
 
-![3D Trajectory](assets/Trajectory_Plot.png)
+![Trajectory](assets/Trajectory%20Plot.png)
 
 ## Overview
 
@@ -16,7 +16,7 @@ This project models a quadrotor's rigid-body dynamics from first principles and 
 
 ## Model Architecture
 
-![Simulink Model](assets/Simulink_model_Image.png)
+![Simulink Model](assets/Simulink%20model%20Image.png)
 
 The model is split into four main subsystems:
 
@@ -28,20 +28,6 @@ The model is split into four main subsystems:
 | `Rotational Dynamics` | Rigid-body attitude dynamics (roll, pitch, yaw) + motor mixing |
 
 Control is cascaded: the position loop runs slower and sets attitude targets; the attitude loop runs faster and tracks those targets with torque commands.
-
-## Repository Structure
-
-```
-├── quadrotor_Simulink_Main.slx   # Main Simulink model
-├── quad_params.m                 # Physical parameters (mass, inertia, etc.)
-├── quad_model_sim.m               # Script to init params, run the model, and plot results
-├── assets/                        # Result plots and model screenshots
-│   ├── Simulink_model_Image.png
-│   ├── Position_plots.png
-│   ├── Attitude_Plots.png
-│   └── Trajectory_Plot.png
-└── README.md
-```
 
 ## Requirements
 
@@ -72,10 +58,10 @@ This will initialize the physical parameters, run the Simulink model, and automa
 The model was validated on a 3D circular trajectory with continuous yaw and a steady climb in altitude.
 
 **Position tracking:**
-![Position states](assets/Position_plots.png)
+![Position states](assets/Position%20plots.png)
 
 **Attitude tracking:**
-![Attitude states](assets/Attitude_Plots.png)
+![Attitude states](assets/Attitude%20Plots.png)
 
 Both position and attitude states track their references closely, including through the continuously changing yaw angle, confirming the axes are correctly decoupled.
 
@@ -98,17 +84,5 @@ Defined in `quad_params.m`, based on a small quadrotor:
 - PID gains for both the position and attitude loops were derived analytically from each axis's linearized plant transfer function, using pole placement.
 - Torque and thrust saturation limits were added based on the physical motor-mixing constraints.
 - Anti-windup (clamping) was added on all loops to prevent integrator windup during saturation.
-
-## Known Limitations / Future Work
-
-- Gains are tuned for a single operating point; gain scheduling could improve performance across a wider flight envelope.
-- No sensor noise or estimator (e.g. EKF) is currently modeled — the plant states are fed back directly.
-- No wind disturbance or aerodynamic drag model yet.
-
-## License
-
-MIT License — feel free to use, modify, and build on this project.
-
-## Acknowledgments
 
 Built as a learning project to explore 6-DOF nonlinear dynamics modeling and cascaded flight control design in Simulink.
